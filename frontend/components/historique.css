@@ -1,0 +1,136 @@
+.historique-wrapper {
+  padding: 2rem 5%;
+}
+
+.historique-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.historique-table .table-titre {
+  background-color: #0E1A2B;
+  color: #F5C842;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 1rem 1.5rem;
+  text-align: left;
+}
+
+.historique-table .table-categories th {
+  background-color: #F5C842;
+  color: #0E1A2B;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  padding: 0.75rem 1rem;
+  text-align: center;
+}
+
+.historique-table .table-colonnes th {
+  background-color: #ffffff;
+  color: #0E1A2B;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.historique-table tbody tr {
+  background-color: #fafafa;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.historique-table tbody tr:nth-child(even) {
+  background-color: #f0f0f0;
+}
+
+.historique-table tbody td {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #0E1A2B;
+  padding: 0.75rem 1rem;
+  text-align: center;
+}
+
+.feedback-gagne    { color: #28a745; font-weight: bold; }
+.feedback-rate     { color: #E63329; font-weight: bold; }
+.feedback-invalide { color: #888;    font-weight: bold; }
+
+.zip-bande {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #F5C842;
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  margin: 2rem 5% 1rem;
+}
+
+.zip-titre {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 20px;
+  color: #0E1A2B;
+}
+
+.zip-btn {
+  background-color: #E63329;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  border: none;
+  border-radius: 12px;
+  padding: 0.75rem 2rem;
+  cursor: pointer;
+  transition: filter 0.2s;
+}
+
+.zip-btn:hover {
+  filter: brightness(0.9);
+}
+
+/* ============================================================
+   RESPONSIVE MOBILE
+   ============================================================ */
+@media (max-width: 600px) {
+
+  /* Cacher la bande ZIP sur mobile */
+  .zip-bande {
+    display: none;
+  }
+
+  /* Wrapper scrollable horizontalement */
+  .historique-wrapper {
+    padding: 1rem 2%;
+    overflow-x: auto;
+  }
+
+  /* Réduire la taille du titre */
+  .historique-table .table-titre {
+    font-size: 14px;
+    padding: 0.75rem 1rem;
+  }
+
+  /* Réduire les headers catégories et colonnes */
+  .historique-table .table-categories th,
+  .historique-table .table-colonnes th {
+    font-size: 11px;
+    padding: 0.5rem 0.4rem;
+  }
+
+  /* Réduire les cellules */
+  .historique-table tbody td {
+    font-size: 11px;
+    padding: 0.5rem 0.4rem;
+  }
+
+  /* Réduire les images */
+  .historique-table tbody td img {
+    width: 40px;
+    height: 40px;
+  }
+}

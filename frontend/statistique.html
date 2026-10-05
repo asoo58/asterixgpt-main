@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet Toutatix</title>
+    <link rel="stylesheet" href="components/style.css">
+    <link rel="stylesheet" href="components/modal.css">
+    <link rel="stylesheet" href="components/statistique.css">
+</head>
+
+<body>
+    <header>
+        <a href="index.html">
+            <img class="logo_asterixgpt" src="../assets/asterixgpt.png" alt="logo_asterixgpt" />
+        </a>
+        <div class="nav-wrapper">
+            <nav class="nav">
+                <h2 class="h2-avec-gras"><a href="index.html">Défi moi</a></h2>
+                <h2 class="h2-avec-gras"><a href="historique.html">Historique</a></h2>
+                <h2 class="h2-avec-gras"><a href="statistique.html">Statistiques</a></h2>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <!-- Section Statistiques générales -->
+        <section class="stats-section">
+            <h2 class="stats-title">Statistiques générales</h2>
+
+            <div class="stats-cards">
+                <div class="stat-card">
+                    <div class="stat-label">GAGNES</div>
+                    <div class="stat-value gagnes" id="stat-gagnes">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">RATES</div>
+                    <div class="stat-value rates" id="stat-rates">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">TOTAL</div>
+                    <div class="stat-value total" id="stat-total">0</div>
+                </div>
+            </div>
+
+            <div class="success-rate">
+                <div class="percentage" id="stat-percentage">0%</div>
+                <div class="rate-text">DE REUSSITE</div>
+                <div class="feedback" id="stat-feedback">Chargement...</div>
+            </div>
+        </section>
+
+        <!-- Section Prédiction par jour -->
+        <section class="predictions-section">
+            <h2 class="predictions-title">Prédiction par jour</h2>
+
+            <div class="predictions-list" id="prediction-days">
+                <div class="prediction-item">
+                    <div class="day-label">Chargement...</div>
+                </div>
+            </div>
+
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-color gagnes-color"></div>
+                    <span>Gagnes</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color rates-color"></div>
+                    <span>Rates</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color pending-color"></div>
+                    <span>Sans feedback</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>AsterixGPT</p>
+        <p>
+            <b>Adresse:</b> 43 route de st Marie aux mines, 67730 Châtenois<br><br>
+            <b>Telephone</b> 1800 123 4567<br><br>
+            <b>Mail:</b> AsterixGPT.contact@gmail.com<br><br>
+        </p>
+        <div>
+            <a href="https://www.facebook.com/MazdaFrance/?locale=fr_FR">
+                <img class="social-links-logo" src="assets/facebook.png" alt="Facebook">
+            </a>
+            <a href="https://www.instagram.com/mazdafrance/?hl=fr">
+                <img class="social-links-logo" src="assets/instagram.png" alt="Instagram">
+            </a>
+            <a href="https://x.com/mazda_europe">
+                <img class="social-links-logo" src="assets/X.png" alt="Twitter">
+            </a>
+            <a href="https://www.linkedin.com/company/mazda-france/?originalSubdomain=fr">
+                <img class="social-links-logo" src="assets/linkedin.png" alt="LinkedIn">
+            </a>
+            <a href="https://www.youtube.com/@mazdafrance">
+                <img class="social-links-logo" src="assets/youtube.png" alt="YouTube">
+            </a>
+        </div>
+        <p>© 2026 EhrleValenin/ElikAsya/CléonNoah. Tous droits réservés.
+            <u>Politique de confidentialité</u> |
+            <u>Conditions de service</u> |
+            <u>Paramètres des cookies</u>
+        </p>
+    </footer>
+
+    <script src="js/connexion.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/statistique.js"></script>
+</body>
+
+</html>

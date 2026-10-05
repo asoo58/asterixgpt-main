@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projet Toutatix</title>
+  <link rel="stylesheet" href="components/style.css">
+  <link rel="stylesheet" href="components/modal.css">
+  <link rel="stylesheet" href="components/historique.css">
+</head>
+
+<body>
+  <header>
+    <a href="index.html">
+      <img class="logo_asterixgpt" src="../assets/asterixgpt.png" alt="logo_asterixgpt" />
+    </a>
+    <div class="nav-wrapper">
+      <nav class="nav">
+        <h2 class="h2-avec-gras"><a href="index.html">Défi moi</a></h2>
+        <h2 class="h2-avec-gras"><a href="#" class="open-modal" data-url="historique.html">Historique</a></h2>
+        <h2 class="h2-avec-gras"><a href="#" class="open-modal" data-url="statistique.html">Statistiques</a></h2>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="historique-wrapper">
+      <table class="historique-table">
+        <thead>
+          <tr>
+            <th colspan="5" class="table-titre">Liste des suppositions</th>
+          </tr>
+          <tr class="table-colonnes">
+            <th>ID</th>
+            <th>IMAGE</th>
+            <th>PREDICTION</th>
+            <th>FEEDBACK</th>
+            <th>DATE</th>
+          </tr>
+        </thead>
+        <tbody id="historique-tbody">
+          <tr>
+            <td colspan="5" style="text-align:center; padding: 2rem;">Chargement...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="zip-bande">
+      <span class="zip-titre">Télécharger les images</span>
+      <div style="display: flex; gap: 1rem;">
+        <button
+          id="btn-delete"
+          class="zip-btn"
+          style="display: none; background-color: #0E1A2B;"
+          onclick="supprimerHistorique()"
+        >
+          EFFACER HISTORIQUE
+        </button>
+        <button id="btn-zip" class="zip-btn">ZIP IMAGES</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>AsterixGPT</p>
+    <p>
+      <b>Adresse:</b> 43 route de st Marie aux mines, 67730 Châtenois<br><br>
+      <b>Telephone</b> 1800 123 4567<br><br>
+      <b>Mail:</b> AsterixGPT.contact@gmail.com<br><br>
+    </p>
+    <div>
+      <a href="https://www.facebook.com/MazdaFrance/?locale=fr_FR">
+        <img class="social-links-logo" src="assets/facebook.png" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/mazdafrance/?hl=fr">
+        <img class="social-links-logo" src="assets/instagram.png" alt="Instagram">
+      </a>
+      <a href="https://x.com/mazda_europe">
+        <img class="social-links-logo" src="assets/X.png" alt="Twitter">
+      </a>
+      <a href="https://www.linkedin.com/company/mazda-france/?originalSubdomain=fr">
+        <img class="social-links-logo" src="assets/linkedin.png" alt="LinkedIn">
+      </a>
+      <a href="https://www.youtube.com/@mazdafrance">
+        <img class="social-links-logo" src="assets/youtube.png" alt="YouTube">
+      </a>
+    </div>
+    <p>© 2026 EhrleValenin/ElikAsya/CléonNoah. Tous droits réservés.
+      <u>Politique de confidentialité</u> |
+      <u>Conditions de service</u> |
+      <u>Paramètres des cookies</u>
+    </p>
+  </footer>
+
+  <script src="js/connexion.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/historique.js"></script>
+  <script src="js/zip.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projet Toutatix</title>
+  <link rel="stylesheet" href="components/style.css">
+  <link rel="stylesheet" href="components/modal.css">
+</head>
+<body>
+  <header>
+    <a href="index.html">
+      <img class="logo_asterixgpt" src="../assets/asterixgpt.png" alt="logo_asterixgpt"/>
+    </a>
+    <div class="nav-wrapper">
+      <nav class="nav">
+        <h2 class="h2-avec-gras"><a href="index.html">Défi moi</a></h2>
+        <h2 class="h2-avec-gras"><a href="#" class="open-modal" data-url="historique.html">Historique</a></h2>
+        <h2 class="h2-avec-gras"><a href="#" class="open-modal" data-url="statistique.html">Statistiques</a></h2>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="titre_photo">
+      <div class="bande">
+        <h1>Choisir une image ou prendre une photo</h1>
+        <img src="../assets/asterix_serfis.png" alt="astérix selfie" class="selfie-asterixgpt">
+      </div>
+    </section>
+
+    <!-- Input fichier caché — un seul, bien identifié -->
+    <input type="file" id="champ-fichier" accept="image/*" style="display:none">
+
+    <div class="contenu">
+      <div class="carte">
+        <div class="carte-entete">
+          <img src="../assets/upload.png" alt="" class="icone-entete"> Etape 1 : Choisir ou prendre une photo
+        </div>
+        <div class="carte-corps">
+          <div class="grille-zones">
+            <div class="zone-depot" id="zone-import">
+              <div class="icone-zone">
+                <img src="../assets/icone-image.png" alt="importer une image">
+              </div>
+              <img id="apercu-import" class="apercu" alt="aperçu image importée">
+              <span class="legende-zone">Importer l'image<br><small>PNG/JPG</small></span>
+            </div>
+            <div class="zone-depot" id="zone-camera">
+              <div class="icone-zone">
+                <img src="../assets/icone-camera.png" alt="prendre une photo">
+              </div>
+              <img id="apercu-camera" class="apercu" alt="photo prise">
+              <span class="legende-zone" id="legende-camera">Prendre une<br>photo</span>
+            </div>
+          </div>
+          <div class="grille-boutons">
+            <button class="btn btn-sombre" id="btn-import">Importer une image</button>
+            <button class="btn btn-sombre" id="btn-camera">Prendre une photo</button>
+          </div>
+          <button class="btn btn-rouge" id="btn-envoyer">Envoyer à l'IA</button>
+        </div>
+      </div>
+    </div>
+
+    <section class="bandeau-reponse">
+      <h1>Réponse de l'IA</h1>
+      <div class="bandeau-personnages">
+        <img src="../assets/asterix.jpg" alt="Astérix" class="perso-bandeau">
+        <span class="ou-texte">ou</span>
+        <img src="../assets/obelix.jpg" alt="Obélix" class="perso-bandeau">
+      </div>
+    </section>
+
+    <div class="contenu">
+      <div class="carte">
+        <div class="carte-entete">
+          <img src="../assets/like.png" alt="" class="icone-entete"> Etape 2 : Réponse de l'IA
+        </div>
+        <div class="carte-corps">
+          <div class="reponse-grille">
+            <div class="reponse-tags">
+              <div class="tag tag-blanc" id="tag-nom">Réponse de l'IA</div>
+              <div class="tag tag-jaune" id="tag-confiance">Confiance: –</div>
+            </div>
+            <p class="reponse-texte" id="reponse-texte">
+              AsterixGPT pense que cette image représente "réponse de l'ia" grâce à l'analyse
+              <br> formes et des couleurs détectées dans l'image.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="carte">
+        <div class="carte-entete">
+          <img src="../assets/icone-feedback.png" alt="" class="icone-entete"> Votre Feedback
+        </div>
+        <div class="carte-corps">
+          <div class="grille-boutons">
+            <button class="btn-feedback" id="btn-correct">CORRECT</button>
+            <button class="btn-feedback" id="btn-incorrect">INCORRECT</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal caméra -->
+  <div id="modal-camera" class="modal">
+    <div class="modal-boite">
+      <div class="modal-entete">
+        📷 Prendre une photo
+        <button class="modal-fermer" id="btn-fermer-camera">✕</button>
+      </div>
+      <video id="flux-video" autoplay playsinline></video>
+      <div class="modal-pied">
+        <button class="btn btn-sombre" id="btn-capturer">📸 Capturer</button>
+        <button class="btn" style="background:#e0e0e0;color:#0E1A2B;" id="btn-annuler-camera">Annuler</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+        <p>AsterixGPT</p>
+        <p>
+            <b>Adresse:</b> 43 route de st Marie aux mines, 67730 Châtenois<br><br>
+            <b>Telephone</b> 1800 123 4567<br><br>
+            <b>Mail:</b> AsterixGPT.contact@gmail.com<br><br>
+        </p>
+        <div>
+            <a href="https://www.facebook.com/MazdaFrance/?locale=fr_FR">
+                <img class="social-links-logo" src="assets/facebook.png" alt="Facebook">
+            </a>
+            <a href="https://www.instagram.com/mazdafrance/?hl=fr">
+                <img class="social-links-logo" src="assets/instagram.png" alt="Instagram">
+            </a>
+            <a href="https://x.com/mazda_europe">
+                <img class="social-links-logo" src="assets/X.png" alt="Twitter">
+            </a>
+            <a href="https://www.linkedin.com/company/mazda-france/?originalSubdomain=fr">
+                <img class="social-links-logo" src="assets/linkedin.png" alt="LinkedIn">
+            </a>
+            <a href="https://www.youtube.com/@mazdafrance">
+                <img class="social-links-logo" src="assets/youtube.png" alt="YouTube">
+            </a>
+        </div>
+        <p>© 2026 EhrleValenin/ElikAsya/CléonNoah. Tous droits réservés.
+            <u>Politique de confidentialité</u> |
+            <u>Conditions de service</u> |
+            <u>Paramètres des cookies</u>
+        </p>
+    </footer>
+
+  <div id="toast"></div>
+  
+
+  <script src="js/connexion.js"></script>
+  <script src="js/cam.js"></script>
+  <script src="js/modal.js"></script>
+</body>
+</html>

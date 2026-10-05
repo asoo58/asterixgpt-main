@@ -1,0 +1,553 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Poppins:wght@400;700&display=swap');
+
+/* --- Typographie (ton code) --- */
+
+h1 {
+    color: #0E1A2B;
+    font-family: 'Luckiest Guy', cursive;
+}
+
+.h2-sans-gras {
+    color: #0E1A2B;
+    font-family: 'Poppins', sans-serif;
+}
+
+.h2-avec-gras {
+    color: #0E1A2B;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+.h2-avec-gras-grand {
+    color: #0E1A2B;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+/* --- Bandeau titre jaune (ton code) --- */
+
+.titre_photo {
+    background-color: #F5C842;
+    margin-top: 20px;
+    padding: 0; /* important : on enlève le padding vertical */
+}
+
+.bande {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 5%; /* padding horizontal seulement */
+    position: relative;
+}
+
+/* IMAGE QUI DÉPASSE DU BANDEAU */
+.selfie-asterixgpt {
+    width: clamp(150px, 22vw, 300px);
+    margin-left: auto;
+    margin-right: 2%;
+    margin-top: -40px; 
+    margin-bottom: -44px; 
+}
+
+
+/* --- Logo (ton code) --- */
+
+.logo_asterixgpt {
+    width: 120px;
+}
+
+/* --- Reset body (ton code) --- */
+
+body {
+    margin: 0;
+    background: #f4f0ea;
+}
+
+/* --- Header (ton code) --- */
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: #E63329;
+}
+
+.nav {
+    display: flex;
+    gap: clamp(20px, 5vw, 360px);
+}
+
+.nav-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav a {
+    text-decoration: none;
+    color: black;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: #F5C842;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.nav a:hover {
+    color: #F5C842;
+}
+
+.nav a:hover::after {
+    transform: scaleX(1);
+}
+
+
+/* ============================================================
+   AJOUTS (ce qui manquait)
+   ============================================================ */
+
+/* Wrapper du contenu principal */
+
+.contenu {
+    width: 100%;
+    padding: 24px 5% 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+/* --- Carte --- */
+
+.carte {
+    background: #D9D9D9;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.carte-entete {
+    background: #0E1A2B;
+    color: #F5C842;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.carte-corps {
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* --- Zones de dépôt (import / caméra) --- */
+.grille-zones {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.zone-depot {
+    border: 2px dashed #d0d0d0;
+    border-radius: 10px;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 12px;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.zone-depot:hover {
+    border-color: #0E1A2B;
+    background: #f0f0f0;
+}
+
+.zone-depot.avec-image {
+    border-style: solid;
+    border-color: #0E1A2B;
+}
+
+.icone-zone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icone-zone img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.legende-zone {
+    font-size: 12px;
+    color: #888;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Aperçu caché par défaut, affiché via JS */
+.apercu {
+    width: 100%;
+    height: 90px;
+    object-fit: contain;
+    border-radius: 6px;
+    display: none;
+}
+
+/* --- Boutons --- */
+.grille-boutons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.btn {
+    width: 100%;
+    padding: 11px 16px;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, transform 0.1s;
+}
+
+.btn:hover  { background: #F5C842; color: #ffffff; }
+
+.btn-sombre { background: #0E1A2B; color: #ffffff; }
+.btn-rouge  { background: #E63329; color: #ffffff; }
+
+/* --- Bandeau "Réponse de l'IA" jaune --- */
+.bandeau-reponse {
+    background-color: #F5C842;
+    padding: 16px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.bandeau-personnages {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 7%;
+}
+
+
+.perso-bandeau {
+    width: clamp(50px, 10vw, 70px);
+    height: clamp(50px, 10vw, 70px);
+    object-fit: contain;
+    background: rgba(255,255,255,0.4);
+    border-radius: 50%;
+    padding: 4px;
+}
+
+.ou-texte {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 18px;
+    color: #0E1A2B;
+}
+
+/* --- Réponse de l'IA --- */
+.reponse-grille {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 16px;
+    align-items: start;
+}
+
+.reponse-tags {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.tag {
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    text-align: center;
+}
+
+.tag-blanc {
+    background: #ffffff;
+    border: 1.5px solid #d0d0d0;
+    color: #0E1A2B;
+}
+
+.tag-jaune {
+    background: #F5C842;
+    color: #0E1A2B;
+}
+
+.reponse-texte {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* --- Boutons feedback --- */
+.btn-feedback {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #0E1A2B;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #0E1A2B;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, border-color 0.3s, transform 0.1s;
+}
+
+.btn-feedback:hover {
+    background: #F5C842;
+    border-color: #F5C842;
+}
+
+
+.btn-feedback.selectionne-correct {
+    background: #28a745;
+    color: #ffffff;
+    border-color: #28a745;
+}
+
+.btn-feedback.selectionne-incorrect {
+    background: #E63329;
+    color: #ffffff;
+    border-color: #E63329;
+}
+
+/* --- Modal caméra --- */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+
+.modal.ouvert {
+    display: flex;
+}
+
+.modal-boite {
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 480px;
+    width: 100%;
+}
+
+.modal-entete {
+    background: #0E1A2B;
+    color: #ffffff;
+    padding: 12px 16px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-fermer {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#flux-video {
+    width: 100%;
+    display: block;
+    max-height: 320px;
+    object-fit: cover;
+}
+
+.modal-pied {
+    padding: 12px 16px;
+    display: flex;
+    gap: 10px;
+}
+/*
+/* --- Toast --- */
+#toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    background: #0E1A2B;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 40px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+    z-index: 300;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+#toast.visible {
+    transform: translateX(-50%) translateY(0);
+}
+
+/* ===== FOOTER ===== */
+/* Style du pied de page : fond blanc et padding */
+.footer {
+    background-color: #0E1A2B;
+    padding: 40px;
+    font-size: 14px;
+}
+
+/* Taille du logo du pied de page */
+.footer-logo {
+    width: 60px;
+}
+
+/* Disposition du contenu du pied de page */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+/* Style des informations du pied de page */
+.footer-info {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Disposition des liens du pied de page */
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Style des liens dans le pied de page */
+.footer-links a {
+    text-decoration: underline;
+}
+
+/* Style des liens de contact */
+.contact a {
+    text-decoration: underline;
+}
+
+/* Style des liens sociaux dans le pied de page */
+.social-links {
+    display: flex;
+    gap: 12px;
+}
+
+/* Taille des icônes sociales */
+.social-links img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+/* Style du logo des liens sociaux */
+.social-links-logo {
+    width: 24px;
+    position: relative;
+    height: 24px;
+    cursor: pointer;
+}
+
+/* ============================================================
+   RESPONSIVE MOBILE
+   ============================================================ */
+@media (max-width: 600px) {
+
+    /* Navigation : réduit le gap trop large */
+    .nav {
+        gap: clamp(16px, 6vw, 60px);
+    }
+
+    .nav h2 {
+        font-size: 13px;
+    }
+
+    /* Bandeau titre : image plus petite */
+    .selfie-asterixgpt {
+        width: 100px;
+        margin-left: 5%;
+    }
+
+    .bande h1 {
+        font-size: clamp(16px, 4vw, 22px);
+    }
+
+    /* Zones de dépôt : restent en 2 colonnes mais plus petites */
+    .grille-zones {
+        gap: 10px;
+    }
+
+    .zone-depot {
+        min-height: 90px;
+    }
+
+    .icone-zone {
+        font-size: 26px;
+    }
+
+    /* Réponse IA : passe en colonne */
+    .reponse-grille {
+        grid-template-columns: 1fr;
+    }
+
+    .reponse-tags {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    /* Bandeau "Réponse de l'IA" */
+    .bandeau-reponse h1 {
+        font-size: 18px;
+    }
+
+    .perso-bandeau {
+        width: 44px;
+        height: 44px;
+    }
+
+}
+
+
+
